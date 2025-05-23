@@ -1,12 +1,12 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 const apiClient = axios.create({
-  baseURL: "http://localhost:1010/api/auth/",
+  baseURL: "https://blynkmartbackend.onrender.com/api/auth/",
   timeout: 10000,
 });
 
 const unauthApiService = axios.create({
-  baseURL: "http://localhost:1010/api/unauth/",
+  baseURL: "https://blynkmartbackend.onrender.com/api/unauth/",
   timeout: 10000,
 });
 
