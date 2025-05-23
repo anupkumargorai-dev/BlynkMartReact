@@ -24,6 +24,13 @@ function App() {
             </PrivateRoute>
           }
         />
+         {/* Default route can redirect based on token presence */}
+        <Route
+          path="/"
+          element={
+            Cookies.get("token") ? <Navigate to="/dashboard" replace /> : <Navigate to="/login" replace />
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
