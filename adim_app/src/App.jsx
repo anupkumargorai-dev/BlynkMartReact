@@ -7,6 +7,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { SideDrawer, RouterProvider } from "./component/side_drawer/SideDrawer";
 import Login from "../src/page/Login";
 import PrivateRoute from "./routes/PrivateRoute.jsx";
+import Cookies from "js-cookie";
+import { Navigate } from "react-router-dom";
+
 
 function App() {
   return (
