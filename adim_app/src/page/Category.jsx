@@ -8,13 +8,14 @@ import {
   useDemoRouter,
   useRouter,
 } from "../component/side_drawer/SideDrawer.jsx";
+import { useNavigate } from "react-router-dom";
 
 function Category() {
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [onBtnClick, setOnBtnClick] = useState(false);
-  const router = useRouter();
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchCategories() {
@@ -36,7 +37,7 @@ function Category() {
 
   const handleCardClick = (category) => {
     console.log("Navigating with category: ", category);
-    router.navigate("/categories/addCategory", { category });
+    navigate("/categories/addCategory", { category });
   };
 
   const deleteCategory = async (category) => {
@@ -71,7 +72,7 @@ function Category() {
       <div className="add-category-btn">
         <Button
           onClick={() => {
-            router.navigate("/categories/addCategory");
+            navigate("/categories/addCategory");
             setOnBtnClick(true);
           }}
           variant="contained"
